@@ -1,0 +1,55 @@
+
+-1930 đảng ra đời, đảng trực tiếp lánh đạo
+
+1 tình hình VN trong những nă 1929 1933. xảy ra cuộc khủng hoảng kinh tế TG
+-kinh tế : suy thóái kt đầu tiên là nông nghiệp
+- xã hội :mâu thuẫn xh gay gắt, nhân dân đói khổ
+-chish trị ngột ngạt do chính sach dàn áp các phong trào đấu tranh yêu nước của nd
+Yên bái (2/1930)--> nguyên nhân sau xa Xô viết Nghệ tĩnh
+2 Đỉnh cao xô viết nghệ tĩnh
+ptcm
+ý nghĩa
+hội nghị ban chấp hành tư lâm thời(10/1930)
+3 1932-1930
+
+
+
+
+câu 1
+hệ thống file được tổ chức lôgic theo 
+dạng hình cây: Hệ thống file được xuất phát từ một thư mục gốc, được kí hiệu là "/" và 
+cho phép tạo ra thư mục con trong một thư mục bất kỳ.
+
+
+
+câu 2
+
+1. / – Root – Thư mục gốc
+
+2. /bin – Các tập tin thực thi của người dùng
+
+3. /sbin – Các tập tin thực thi của hệ thống
+
+4. /etc – Các tập tin cấu hình
+
+5. /dev – Các tập tin thiết bị
+
+6. /proc – Thông tin về các tiến trình
+
+7. /var – File về biến các tiến trình 
+
+8. /tmp – Thư mục chứa các tập tin tạm
+
+9. /usr – Các chương trình của người dùng
+
+10. /home – Thư mục người dùng
+
+11. /boot – Các tập tin của chương trình khởi động 
+
+12. /lib – Các tập tin thư viện của hệ thống
+
+13. /opt – Các ứng dụng phụ tùy chọn 
+
+14. /mnt – Thư mục để mount
+
+15. /srv – Dữ liệu dịch vụ khác
