@@ -1,0 +1,209 @@
+tamnguyen@tamnguyen-virtual-machine:~$ cd !
+bash: cd: !: No such file or directory
+tamnguyen@tamnguyen-virtual-machine:~$ cd ~
+tamnguyen@tamnguyen-virtual-machine:~$ ls 
+bt1.sh   Documents  examples.desktop  Pictures  Templates  Videos
+Desktop  Downloads  Music             Public    vd
+tamnguyen@tamnguyen-virtual-machine:~$ cd vd
+tamnguyen@tamnguyen-virtual-machine:~/vd$ touch hello.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cat hello.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cat > hello.txt
+nguyễn lê thành tâm 61cntt1 linux basic
+^C
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cat hello.txt
+nguyễn lê thành tâm 61cntt1 linux basic
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cp hello.txt xinchao.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ ls 
+hello.txt  xinchao.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ rm xin*
+tamnguyen@tamnguyen-virtual-machine:~/vd$ ls 
+hello.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ mv hello.txt xinchao.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ ls
+xinchao.txt
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cd .
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cd ./..
+tamnguyen@tamnguyen-virtual-machine:~$ ls
+bt1.sh   Documents  examples.desktop  Pictures  Templates  Videos
+Desktop  Downloads  Music             Public    vd
+tamnguyen@tamnguyen-virtual-machine:~$ mv ./vd/xinchao.txt vd1
+tamnguyen@tamnguyen-virtual-machine:~$ ls
+bt1.sh   Documents  examples.desktop  Pictures  Templates  vd1
+Desktop  Downloads  Music             Public    vd         Videos
+tamnguyen@tamnguyen-virtual-machine:~$ cd vd
+tamnguyen@tamnguyen-virtual-machine:~/vd$ ls
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cd ./..
+tamnguyen@tamnguyen-virtual-machine:~$ ls
+bt1.sh   Documents  examples.desktop  Pictures  Templates  vd1
+Desktop  Downloads  Music             Public    vd         Videos
+tamnguyen@tamnguyen-virtual-machine:~$ rm vd1
+tamnguyen@tamnguyen-virtual-machine:~$ cp vd vd1
+cp: -r not specified; omitting directory 'vd'
+tamnguyen@tamnguyen-virtual-machine:~$ cp -r vd vd1
+tamnguyen@tamnguyen-virtual-machine:~$ ls
+bt1.sh   Documents  examples.desktop  Pictures  Templates  vd1
+Desktop  Downloads  Music             Public    vd         Videos
+tamnguyen@tamnguyen-virtual-machine:~$ mv vd ./home/Documents
+mv: cannot move 'vd' to './home/Documents': No such file or directory
+tamnguyen@tamnguyen-virtual-machine:~$ mv vd ./Documents
+tamnguyen@tamnguyen-virtual-machine:~$ cd Documents
+tamnguyen@tamnguyen-virtual-machine:~/Documents$ ls 
+a.txt  bt1  name  vd  vlfor.sh
+tamnguyen@tamnguyen-virtual-machine:~/Documents$ 
+
+
+
+từ ví dụ trong home ->Documets
+tamnguyen@tamnguyen-virtual-machine:~$ cd vd
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cd ~/Documents
+tamnguyen@tamnguyen-virtual-machine:~/Documents$ 
+
+
+chuyen vao thu muc root tamnguyen@tamnguyen-virtual-machine:~$sudo -i
+Hiển thị tập tin kernel của linux $ uname -r 
+24.Hiển thị version linux đang sử dụng $ cat /proc/version
+trở về thư mục người dùng  : ctr D 
+root@tamnguyen-virtual-machine:~# logout
+
+vào thư mục \
+tamnguyen@tamnguyen-virtual-machine:~$ cd /
+tamnguyen@tamnguyen-virtual-machine:/$ ls -l /home liệt kê
+
+ 
+liệt lê các file trong etc có chưa chuỗi conf
+tamnguyen@tamnguyen-virtual-machine:/$ ls /etc/*conf*
+liệt lê các file trong etc có bđ bằng b,k,n
+tamnguyen@tamnguyen-virtual-machine:/$ ls /etc/[b,k,n]*
+chứa kí tự 2 là chữ h
+tamnguyen@tamnguyen-virtual-machine:/$ ls /etc/?h*
+
+xoá 1 thư mục có chưa file
+ tamnguyen@tamnguyen-virtual-machine:~$ rm -r linux2021
+
+di chuyển giữa 2 thư mục
+tamnguyen@tamnguyen-virtual-machine:~$ cd Desktop
+tamnguyen@tamnguyen-virtual-machine:~/Desktop$ cd ..BTLinux
+bash: cd: ..BTLinux: No such file or directory
+tamnguyen@tamnguyen-virtual-machine:~/Desktop$ cd ../BTLinux
+tamnguyen@tamnguyen-virtual-machine:~/BTLinux$ 
+
+
+gọi lệnh bash trong thư muc /
+tamnguyen@tamnguyen-virtual-machine:/$ bash ~/BTLinux/read.sh etc/passwd
+
+
+nén file
+tamnguyen@tamnguyen-virtual-machine:~$ tar -czvf thunen.tar.gz
+
+giải nén 
+tamnguyen@tamnguyen-virtual-machine:~$ tar -xzvf thunen.tar.gz
+
+cấp nhiều quyền trên thư mục
+tamnguyen@tamnguyen-virtual-machine:~/BTLinux$ chmod u=rw,g=r,o= bt3
+kết hợp grep 
+tamnguyen@tamnguyen-virtual-machine:~/BTLinux$ ls -li | grep bt3
+
+
+================= quản tị hệ thônga
+chuyển sang tk root
+sudo -i
+chạy 1 dịhc vụ  
+c1  tamnguyen@tamnguyen-virtual-machine:~$ service cron start
+c2  tamnguyen@tamnguyen-virtual-machine:/etc$ init .d/cron stop
+xem trạng thái dịchv vụ cron     tamnguyen@tamnguyen-virtual-machine:/etc$ service --status-all | grep cr
+xem mức chạy $runlevel
+liệt kê thư mục ẩn   tamnguyen@tamnguyen-virtual-machine:~$ ls -a ~
+xem tập etc bằng lệnh more    tamnguyen@tamnguyen-virtual-machine:~$ ls /etc | more
+đọc tập tin chứa  thôn tin người dùng    tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | more
+
+================== mount đĩa===============================
+- Add 1 đãi có dung lượng 1GB ở mục setting của Vmware 
+- dùng lệnh sudo lsblk hiển thị thông tin về các thiết bị lưu trữ.
+tamnguyen@ntutamnguyen-virtual-machine:~$ sudo lsblk
+- Tạo Bảng Phân Vùng
+tamnguyen@ntutamnguyen-virtual-machine:~$ sudo fdisk /dev/sbd
+- Chỉ định khu vực đầu tiên.Sử dụng các giá trị mặc định cho giá trị đầu tiên. 
+Nhấn Enter để sử dụng giá trị mặc định (2048)
+chọn n ->
+chọn option p để  xác định phân vùng đĩa là primary
+chọn p
+chọn w để lưu việc phân vùng
+
+
+- Kích Hoạt Các Phân Vùng
+Sau khi tạo phân vùng, ta cần định dạng lại phân vùng trước khi sử dụng. Bằng cách sử dụng lệnh mkfs tương ứng. 
+định dạng lại phân vùng theo định dạng ext4:
+tamnguyen@ntutamnguyen-virtual-machine:~$ sudo mkfs -t ext4 /dev/sdb1
+
+- Tạo thư mục để mount phân vùng hiện tại
+tamnguyen@ntutamnguyen-virtual-machine:~$ mkdir /data
+- Mount phân vùng vừa tạo vào thư mục data để sử dụng
+tamnguyen@ntutamnguyen-virtual-machine:~$ sudo mount -t ext4 /dev/sbd1 /data
+tamnguyen@ntutamnguyen-virtual-machine:~$ mount
+- Kiểm tra : thư mục /dev/sdb1 on /data type ext4 (rw,relatime) là đã mount thành công
+
+tamnguyen@ntutamnguyen-virtual-machine:~$ sudo nano /etc/fstab
+ thêm dòng 
+
+/dev/sdb1	/data	ext4	rw,auto		0	0 
+
+ Lưu file nano ctrl + O Enter ctr x 
+
+- Khởi động lại Ubuntu và kiểm tra kết quả
+
+
+================================ fix lỗi emergency mode========================
+root/  sudo nano /etc/fstab
+ xoá các dòng mà mình đã đinh dạng để mount phân vùng 
+ lưu lại là xog 
+
+
+
+====================== quản lí tién trình==========================================
+liệt kê tấc cả tiến trình 
+tamnguyen@tamnguyen-virtual-machine:~$ ps -e 
+
+tamnguyen@tamnguyen-virtual-machine:~$ ps -ef
+
+UID         PID   PPID  C STIME TTY          TIME CMD
+
+tamnguyen@tamnguyen-virtual-machine:~$ ps -eF
+
+UID         PID   PPID  C    SZ   RSS PSR STIME TTY          TIME CMD
+
+hiển thị cá tiến trình và mức sử dụng cpu mem
+tamnguyen@tamnguyen-virtual-machine:~$  ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem,%cpu 
+
+hiện thị file crontab 
+tamnguyen@tamnguyen-virtual-machine:~$ sudo service cron restart
+tamnguyen@tamnguyen-virtual-machine:~$ service --status-all | grep cron
+
+tamnguyen@tamnguyen-virtual-machine:~$ crontab -l
+no crontab for tamnguyen
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,234 @@
+BT 1
+
+tamnguyen@tamnguyen-virtual-machine:~$ mkdir vd
+tamnguyen@tamnguyen-virtual-machine:~$ cd vd
+tamnguyen@tamnguyen-virtual-machine:~/vd$ touch hello.txt 
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cat > hello.txt 
+hello ubuntu!
+tamnguyen@tamnguyen-virtual-machine:~/vd$ cat hello.txt
+hello ubuntu!
+tamnguyen@tamnguyen-virtual-machine:~/vd$ mv hello.txt chao.txt
+tamnguyen@tamnguyen-virtual-machine:~$ cp -r vd vd1
+tamnguyen@tamnguyen-virtual-machine:~$ mv vd ./Documents
+tamnguyen@tamnguyen-virtual-machine:~$ rm -r vd1
+
+
+BT 2
+
+tamnguyen@tamnguyen-virtual-machine:~$ mkdir bt2
+tamnguyen@tamnguyen-virtual-machine:~$ cd bt2
+tamnguyen@tamnguyen-virtual-machine:~/bt2$ touch ds.txt
+tamnguyen@tamnguyen-virtual-machine:~/bt2$ cat > ds.txt
+nguyen le thanh tam
+
+tamnguyen@tamnguyen-virtual-machine:~/bt2$  ln -s ds.txt ~/Desktop/ds
+tamnguyen@tamnguyen-virtual-machine:~/Desktop$ ln -s ~/bt2/ds.txt ds
+
+
+tatamnguyen@tamnguyen-virtual-machine:~/Desktop$ ls -li
+total 4
+1851498 -rw-rw-r-- 1 tamnguyen tamnguyen 18 Thg 1 25 11:36 a.txt
+1835043 lrwxrwxrwx 1 tamnguyen tamnguyen 26 Thg 1 28 21:02 ds -> /home/tamnguyen/bt2/ds.txt
+
+tamnguyen@tamnguyen-virtual-machine:~$ rm ~/bt2/ds.txt
+
+
+tamnguyen@tamnguyen-virtual-machine:~$ cat ~/bt2/ds.txt
+tamnguyen@tamnguyen-virtual-machine:~$ cat ~/Desktop/ds
+
+
+
+BT 3
+tamnguyen@tamnguyen-virtual-machine:~$ mkdir bt3
+tamnguyen@tamnguyen-virtual-machine:~$ touch text.txt
+tamnguyen@tamnguyen-virtual-machine:~$ cat > text.txt
+he dieu hanh linux 
+61 CNTT1
+^C
+tamnguyen@tamnguyen-virtual-machine:~$ mv text.txt bt3
+
+tamnguyen@tamnguyen-virtual-machine:~$ chmod u=rw,g=r,o= bt3
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li | grep bt3
+1835042 drw-r----- 2 tamnguyen tamnguyen 4096 Thg 1 28 21:18 bt3
+
+tamnguyen@tamnguyen-virtual-machine:~$ chmod 640 bt3
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li | grep bt3
+1835042 drw-r----- 2 tamnguyen tamnguyen 4096 Thg 1 28 21:18 bt3
+
+tamnguyen@tamnguyen-virtual-machine:~$ chmod 760 bt3
+tamnguyen@tamnguyen-virtual-machine:~$ cd bt3
+tamnguyen@tamnguyen-virtual-machine:~/bt3$
+
+tamnguyen@tamnguyen-virtual-machine:~$ chmod 764 ./bt3/text.txt
+tamnguyen@tamnguyen-virtual-machine:~$ cd bt3
+tamnguyen@tamnguyen-virtual-machine:~/bt3$ ls -li
+total 4
+1835048 -rwxrw-r-- 1 tamnguyen tamnguyen 29 Thg 1 28 21:18 text.txt
+
+tamnguyen@tamnguyen-virtual-machine:~/bt3$ chmod u-r text.txt
+tamnguyen@tamnguyen-virtual-machine:~/bt3$ cat text.txt
+cat: text.txt: Permission denied
+
+tamnguyen@tamnguyen-virtual-machine:~$ chmod 5761 bt3
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li| grep bt3
+1835042 drwsrw---t 2 tamnguyen tamnguyen 4096 Thg 1 28 21:18 bt3
+
+tamnguyen@tamnguyen-virtual-machine:~$ sudo chown tam2 bt3
+tam2@tamnguyen-virtual-machine:/home/tamnguyen$ ls -li | grep bt3
+1835042 drwsrw---t 2 tam2      tamnguyen 4096 Thg 1 28 21:18 bt3
+
+tam2@tamnguyen-virtual-machine:/home/tamnguyen$ chmod u-s,o-t bt3
+
+
+tamnguyen@tamnguyen-virtual-machine:~$ rmdir bt3
+
+
+
+BT 4
+tamnguyen@tamnguyen-virtual-machine:~$ echo He dieu hanh linux
+He dieu hanh linux
+
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | more
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | head -5
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | tail -5
+
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li | head -5
+total 68
+1851153 -rw-rw-r-- 1 tamnguyen tamnguyen   92 Thg 1 29 08:42 bt1.sh
+1835040 drwxrwxr-x 2 tamnguyen tamnguyen 4096 Thg 1 28 21:08 bt2
+1851496 drwxrwxr-x 3 tamnguyen tamnguyen 4096 Thg 1 27 11:16 BTLinux
+1835011 -rw-rw-r-- 1 tam2      tamnguyen    0 Thg 1 15 10:51 changeuser.txt
+
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li | grep *.txt
+
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li| cat >> ~/Documents/homedir.txt
+tamnguyen@tamnguyen-virtual-machine:~$ ls -li | tee  ~/Documents/homedir.txt
+
+tamnguyen@tamnguyen-virtual-machine:~$ ls -l /etc | more
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | tail -10 | cat >> ~/Documents/user.txt
+
+BT 5
+tamnguyen@tamnguyen-virtual-machine:~$ touch ~/61cntt1/sv.txt
+tamnguyen@tamnguyen-virtual-machine:~/61cntt1$ tar -czvf nenfile.tar.gz sv.txt
+tamnguyen@tamnguyen-virtual-machine:~/61cntt1$ tar -xzvf nenfile.tar.gz sv.txt
+
+tamnguyen@tamnguyen-virtual-machine:~$ tar -zcvf 61cntt1.tar.gz 61cntt1 sv.txt
+61cntt1/
+61cntt1/sv.txt
+tamnguyen@tamnguyen-virtual-machine:~$ rm -r 61cntt1
+tamnguyen@tamnguyen-virtual-machine:~$ tar -xzvf 61cntt1.tar.gz
+61cntt1/
+61cntt1/sv.txt
+tamnguyen@tamnguyen-virtual-machine:~$ rm -r 61cntt1
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd
+
+tamnguyen@tamnguyen-virtual-machine:~$ find test*
+
+tamnguyen@tamnguyen-virtual-machine:~$ find / -size +1M -size -10M | more 
+tamnguyen@tamnguyen-virtual-machine:~$ find / -perm /u=rwx | cat >> ~/61cntt1/run.txt
+tamnguyen@tamnguyen-virtual-machine:~$ cat /etc/passwd | grep tamnguyen
+tamnguyen:x:1000:1000:tamnguyen,,,:/home/tamnguyen:/bin/bash
+
+
+BT 6
+
+6.1
+if [ $1 -gt $2 ]; then
+	max=$1
+else 	
+	max=$2
+fi
+if [ $max -gt $3 ]; then
+	max=$max
+else 
+	max=$3
+fi
+
+echo $max
+
+tamnguyen@tamnguyen-virtual-machine:~/BTLinux$ bash max3nums.sh 10 -4 7
+10
+
+
+6.2
+echo -n "Duong dan tap tin can xoa (if): "
+read path
+echo $path
+
+if [ -e $path ];then
+	echo "Ton tai file ! Ban co chac muon xoa ? (yes/no)"
+	read del
+	if [ $del = "yes" ];then
+		rm $path
+		echo "File duoc xoa thanh cong !"
+	else
+		echo "File chua duoc xoa !"
+	fi
+else
+	echo "Khong ton tai file"
+fi
+
+
+tamnguyen@tamnguyen-virtual-machine:~$ bash ~/BTLinux/6_2.sh 
+Duong dan tap tin can xoa (if): ~/61cntt1/del.txt
+~/61cntt1/del.txt
+Khong ton tai file
+tamnguyen@tamnguyen-virtual-machine:~$ bash ~/BTLinux/6_2.sh 
+Duong dan tap tin can xoa (if): 61cntt1/del.txt
+61cntt1/del.txt
+Ton tai file ! Ban co chac muon xoa ? (yes/no)
+yes
+File duoc xoa thanh cong !
+
+6.3
+
+6.4
+6.5
+#!/bin/bash
+
+let name=1
+for i in $3/*$1
+do
+	mv $i $3/$2$name$1
+	let name=$name+1
+done
+
+
+BT 7
+BT 8
+
+tamnguyen@tamnguyen-virtual-machine:~$ cal 12 2022
+tamnguyen@tamnguyen-virtual-machine:~$ df
+tamnguyen@tamnguyen-virtual-machine:~$ sudo fdisk -l
+
+
+BT 9
+tamnguyen@tamnguyen-virtual-machine:~$ crontab -e
+*/1 * * * * (date >> timecrontab.txt)
+tamnguyen@tamnguyen-virtual-machine:~$ sudo service cron restart
+
+tamnguyen@tamnguyen-virtual-machine:~$ cat timecrontab.txt
+Thứ hai, 29 Tháng 11 năm 2021 11:33:05 +07
+Thứ hai, 29 Tháng 11 năm 2021 11:34:04 +07
+Thứ hai, 29 Tháng 11 năm 2021 11:35:07 +07
+
+
+====bonus============
+tìm kiếm tệp chỉ có quyền đọc
+tamnguyen@tamnguyen-virtual-machine:~$ find  / -perm /u=r | more
+
+Để tìm tất cả các file có quyền là “777” trong thư mục “/home”, hãy chạy:
+
+find /home -type f -perm 0777 -print
+
+File Name to Write: /tmp/crontab.yGgLZO/crontab1  
+
+
+
+
+
+
+
+
+
